@@ -17,7 +17,7 @@ public class MultipleChoice extends Question {
 
     private int correctAnswer;
 
-    @OneToMany(mappedBy = "multipleChoice", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "multipleChoice", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Choice> choices;
 
     public MultipleChoice() {
