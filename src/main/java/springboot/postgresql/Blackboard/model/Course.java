@@ -28,10 +28,10 @@ public class Course {
     @JsonIgnore
     private Teacher teacher;
 
-    @OneToMany(mappedBy = "course", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "course", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Section> sections;
 
-    @OneToMany(mappedBy = "course", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "course", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Module> modules;
 
     public Course() {

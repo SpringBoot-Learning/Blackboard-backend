@@ -13,7 +13,7 @@ import java.util.Objects;
 @Table
 public class Teacher extends Person {
 
-    @OneToMany(mappedBy = "teacher", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "teacher", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Course> courses;
 
     public Teacher() {

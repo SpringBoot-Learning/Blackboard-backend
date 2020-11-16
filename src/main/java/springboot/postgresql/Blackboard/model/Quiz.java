@@ -28,7 +28,7 @@ public class Quiz {
     @JsonIgnore
     private Module module;
 
-    @OneToMany(mappedBy = "quiz", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "quiz", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Question> questions;
 
     public Quiz() {

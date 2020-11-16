@@ -29,7 +29,7 @@ public class Section {
     @JsonIgnore
     private Course course;
 
-    @OneToMany(mappedBy = "section", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "section", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Enrollment> enrollments;
 
     public Section() {

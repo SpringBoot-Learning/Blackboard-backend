@@ -19,10 +19,10 @@ public class Student extends Person{
 
    private int gradYear;
 
-   @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+   @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
    private List<Enrollment> enrollments;
 
-   @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+   @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
    private List<Answer> answers;
 
    public Student() {
