@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
 import java.util.Objects;
@@ -46,10 +45,5 @@ public class Teacher extends Person {
         return Objects.hash(super.hashCode(), courses);
     }
 
-    @Override
-    public String toString() {
-        return "Teacher{" +
-                "courses=" + courses +
-                '}';
-    }
+
 }

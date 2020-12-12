@@ -40,11 +40,4 @@ public class TrueFalse extends Question {
     public int hashCode() {
         return Objects.hash(super.hashCode(), isTrue);
     }
-
-    @Override
-    public String toString() {
-        return "TrueFalse{" +
-                "isTrue=" + isTrue +
-                '}';
-    }
 }

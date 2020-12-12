@@ -95,14 +95,4 @@ public class Answer {
         return Objects.hash(student, question, trueFalseAnswer, multipleChoiceAnswer);
     }
 
-    @Override
-    public String toString() {
-        return "Answer{" +
-                "id=" + id +
-                ", student=" + student +
-                ", question=" + question +
-                ", trueFalseAnswer=" + trueFalseAnswer +
-                ", multipleChoiceAnswer=" + multipleChoiceAnswer +
-                '}';
-    }
 }

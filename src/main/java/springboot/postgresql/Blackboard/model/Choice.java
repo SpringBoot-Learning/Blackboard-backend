@@ -70,12 +70,4 @@ public class Choice {
         return Objects.hash(multipleChoice, label);
     }
 
-    @Override
-    public String toString() {
-        return "Choice{" +
-                "id=" + id +
-                ", multipleChoice=" + multipleChoice +
-                ", label='" + label + '\'' +
-                '}';
-    }
 }

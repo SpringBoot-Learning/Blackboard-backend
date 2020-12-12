@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -87,13 +88,4 @@ public class Quiz {
         return Objects.hash(status, module, questions);
     }
 
-    @Override
-    public String toString() {
-        return "Quiz{" +
-                "id=" + id +
-                ", status=" + status +
-                ", module=" + module +
-                ", questions=" + questions +
-                '}';
-    }
 }

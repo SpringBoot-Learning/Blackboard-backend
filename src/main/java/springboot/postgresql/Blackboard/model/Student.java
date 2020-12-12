@@ -75,12 +75,4 @@ public class Student extends Person{
       return Objects.hash(super.hashCode(), gradYear, enrollments, answers);
    }
 
-   @Override
-   public String toString() {
-      return "Student{" +
-              "gradYear=" + gradYear +
-              ", enrollments=" + enrollments +
-              ", answers=" + answers +
-              '}';
-   }
 }

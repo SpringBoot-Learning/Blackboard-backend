@@ -2,6 +2,7 @@ package springboot.postgresql.Blackboard.model;
 
 import org.apache.naming.factory.SendMailFactory;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,10 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import java.util.Objects;
 
 @Entity
-@Table
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Person {
 
@@ -25,6 +27,8 @@ public class Person {
     private String address;
     private long phoneNo;
     private String password;
+
+    @Column(name = "username")
     private String username;
 
     public Person() {
@@ -123,16 +127,4 @@ public class Person {
         return Objects.hash(name, age, email, address, phoneNo, password, username);
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", phoneNo=" + phoneNo +
-                ", password='" + password + '\'' +
-                ", username='" + username + '\'' +
-                '}';
-    }
 }

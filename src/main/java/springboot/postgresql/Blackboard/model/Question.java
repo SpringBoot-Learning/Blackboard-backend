@@ -1,7 +1,7 @@
 package springboot.postgresql.Blackboard.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.org.apache.xerces.internal.xinclude.XPointerSchema;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -104,14 +104,4 @@ public class Question {
         return Objects.hash(id, points, questionDescription, quiz, answers);
     }
 
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id=" + id +
-                ", points=" + points +
-                ", questionDescription='" + questionDescription + '\'' +
-                ", quiz=" + quiz +
-                ", answers=" + answers +
-                '}';
-    }
 }

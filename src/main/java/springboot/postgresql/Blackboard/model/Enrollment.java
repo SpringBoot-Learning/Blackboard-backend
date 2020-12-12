@@ -85,13 +85,4 @@ public class Enrollment {
         return Objects.hash(grade, student, section);
     }
 
-    @Override
-    public String toString() {
-        return "Enrollment{" +
-                "id=" + id +
-                ", grade=" + grade +
-                ", student=" + student +
-                ", section=" + section +
-                '}';
-    }
 }

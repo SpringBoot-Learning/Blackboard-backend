@@ -3,6 +3,7 @@ package springboot.postgresql.Blackboard.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,17 +12,19 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"label"})})
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "label")
     private String label;
 
     @ManyToOne
@@ -100,14 +103,4 @@ public class Course {
         return Objects.hash(label, teacher, sections, modules);
     }
 
-    @Override
-    public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", label='" + label + '\'' +
-                ", teacher=" + teacher +
-                ", sections=" + sections +
-                ", modules=" + modules +
-                '}';
-    }
 }

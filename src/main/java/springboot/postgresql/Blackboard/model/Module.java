@@ -26,6 +26,8 @@ public class Module {
     @JsonIgnore
     private Course course;
 
+    private String label;
+
     private String description;
 
     @OneToMany(mappedBy = "module", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
@@ -38,6 +40,21 @@ public class Module {
         this.course = course;
         this.description = description;
         this.quizzes = quizzes;
+    }
+
+    public Module(Course course, String label, String description, List<Quiz> quizzes) {
+        this.course = course;
+        this.label = label;
+        this.description = description;
+        this.quizzes = quizzes;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public int getId() {
@@ -87,13 +104,5 @@ public class Module {
         return Objects.hash(course, description, quizzes);
     }
 
-    @Override
-    public String toString() {
-        return "Module{" +
-                "id=" + id +
-                ", course=" + course +
-                ", description='" + description + '\'' +
-                ", quizzes=" + quizzes +
-                '}';
-    }
+
 }
